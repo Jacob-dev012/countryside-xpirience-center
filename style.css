@@ -1,0 +1,226 @@
+/* Base Resets & Variables */
+:root {
+  --primary: #1b4332;       /* Forest Green */
+  --bg-light: #fcfaf2;      /* Warm Luxury Cream */
+  --text-dark: #1a1a1a;     /* Matte Charcoal */
+  --text-muted: #666666;
+  --card-bg: #ffffff;
+  --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Luxury Minimal Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5%;
+  background: transparent;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary);
+}
+
+.book-btn {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: #fff !important;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 0;
+  transition: var(--transition);
+}
+
+.book-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Fluid Page Hero Area */
+.page-hero {
+  padding: 8rem 5% 4rem 5%;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-tagline {
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  color: var(--primary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.page-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* Architectural Grid & Cards */
+.section {
+  padding: 4rem 5%;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(27,67,50,0.08);
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.card:hover img {
+  transform: scale(1.04);
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--primary);
+  padding-bottom: 4px;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  letter-spacing: 2px;
+}
+
+/* Blockquote Editorial Feature */
+.editorial-snippet {
+  background-color: var(--primary);
+  color: var(--bg-light);
+  padding: 6rem 10%;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.editorial-container blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-style: italic;
+  font-weight: 300;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  padding: 3rem;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+/* Seamless Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+  .page-hero {
+    padding-top: 4rem;
+  }
+}
